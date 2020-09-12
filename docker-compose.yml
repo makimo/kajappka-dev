@@ -42,11 +42,28 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: secret
       MONGO_INITDB_DATABASE: votes
 
-  kajappka-vote-service:
+  # kajappka-vote-service:
+  #   build:
+  #     context: vote-service
+  #     dockerfile: docker/production/Dockerfile
+  #   environment:
+  #     DATABASE_URI: mongodb://kajappka-vote-service-db:secret@db
+  #     AUTH_URL: http://kajappka-verifier-mock:8000/success
+  #     DATABASE: votes
+  #   networks:
+  #     kajappka:
+
+  kajappka-game-service:
     build:
-      context: vote-service
+      context: game-service
       dockerfile: docker/production/Dockerfile
     environment:
-      DATABASE_URI: mongodb://kajappka-vote-service-db:secret@db
-      AUTH_URL: http://kajappka-verifier-mock:8000/success
-      DATABASE: votes
+      VERIFIER_URI: "http://kajappka-verifier-mock:8000/success"
+      DB_PATH: /var/games
+    volumes:
+      - "kajappka-game-service-db:/var/games"
+    networks:
+      kajappka:
+
+volumes:
+  kajappka-game-service-db:
