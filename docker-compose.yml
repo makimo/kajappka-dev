@@ -32,3 +32,12 @@ services:
     depends_on:
       - kajappka-rating-service-db
       - kajappka-verifier-mock
+
+  kajappka-vote-service-db:
+    image: mongo
+    networks:
+      kajappka:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: votes
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_DATABASE: votes
