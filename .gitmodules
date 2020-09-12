@@ -1,3 +1,6 @@
 [submodule "verifier-mock"]
 	path = verifier-mock
 	url = git@github.com:makimo/verifier-mock.git
+[submodule "rating-service"]
+	path = rating-service
+	url = git@github.com:makimo/kajappka-rating-service.git

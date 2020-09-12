@@ -5,3 +5,8 @@ services:
     build:
       context: verifier-mock
       dockerfile: docker/production/Dockerfile
+
+  kajappka-rating-service:
+    build:
+      context: rating-service
+      dockerfile: docker/production/Dockerfile
