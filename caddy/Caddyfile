@@ -1,0 +1,16 @@
+http://localhost:8000
+
+route /games/* {
+    uri strip_prefix /games
+    reverse_proxy http://kajappka-game-service:9001
+}
+
+route /votes/* {
+    uri strip_prefix /votes
+    reverse_proxy http://kajappka-vote-service:8000
+}
+
+route /ratings/* {
+    uri strip_prefix /ratings
+    reverse_proxy http://kajappka-rating-service:8080
+}

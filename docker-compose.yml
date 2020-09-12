@@ -65,5 +65,14 @@ services:
     networks:
       kajappka:
 
+  kajappka-proxy:
+    image: caddy:alpine
+    volumes:
+      - "./caddy:/etc/caddy"
+    networks:
+      kajappka:
+    ports:
+      - "8000:8000"
+
 volumes:
   kajappka-game-service-db:
