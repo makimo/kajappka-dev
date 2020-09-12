@@ -1,12 +1,34 @@
 version: "3.7"
 
+networks:
+  kajappka:
+
 services:
   kajappka-verifier-mock:
     build:
       context: verifier-mock
       dockerfile: docker/production/Dockerfile
+    networks:
+      kajappka:
+
+  kajappka-rating-service-db:
+    image: mongo
+    networks:
+      kajappka:
 
   kajappka-rating-service:
     build:
       context: rating-service
       dockerfile: docker/production/Dockerfile
+    environment:
+      HOST: "0.0.0.0"
+      PORT: 8080
+      VERIFIER_URI: "http://kajappka-verifier-mock:8000/success"
+      MONGO_CONNECTION_STRING: "mongodb://kajappka-rating-service-db:27017/"
+      MONGO_DB_NAME: "ratings"
+      MONGO_COLLECTION_NAME: "ratings"
+    networks:
+      kajappka:
+    depends_on:
+      - kajappka-rating-service-db
+      - kajappka-verifier-mock
