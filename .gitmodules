@@ -4,3 +4,6 @@
 [submodule "rating-service"]
 	path = rating-service
 	url = git@github.com:makimo/kajappka-rating-service.git
+[submodule "vote-service"]
+	path = vote-service
+	url = git@github.com:makimo/kajappka-vote-service.git
