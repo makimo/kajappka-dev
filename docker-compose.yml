@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  kajappka-verifier-mock:
+    build:
+      context: verifier-mock
+      dockerfile: docker/production/Dockerfile
