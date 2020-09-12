@@ -7,3 +7,6 @@
 [submodule "vote-service"]
 	path = vote-service
 	url = git@github.com:makimo/kajappka-vote-service.git
+[submodule "game-service"]
+	path = game-service
+	url = git@github.com:makimo/kajappka-game-service.git
