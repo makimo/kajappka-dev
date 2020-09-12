@@ -18,6 +18,7 @@ following commands:
 
 ```bash
 git clone git@github.com:makimo/kajappka-dev.git
+cd kajappka-dev
 git submodule init
 git submodule update
 ```
