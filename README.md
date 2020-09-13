@@ -28,7 +28,11 @@ To download the updates to the backend code, do:
 ```bash
 git pull
 git submodule update
+docker-compose build
 ```
+
+Then the development backend can be started as usual (see
+[Running the backend](## Running the backend)).
 
 ## Running the backend
 
