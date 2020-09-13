@@ -59,7 +59,7 @@ services:
       dockerfile: docker/production/Dockerfile
     environment:
       VERIFIER_URI: "http://kajappka-verifier-mock:8000/success"
-      DB_PATH: /var/games
+      DB_PATH: "/var/games/db.sqlite"
     volumes:
       - "kajappka-game-service-db:/var/games"
     networks:
