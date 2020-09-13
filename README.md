@@ -32,7 +32,7 @@ docker-compose build
 ```
 
 Then the development backend can be started as usual (see
-[Running the backend](## Running the backend)).
+[Running the backend](#running-the-backend)).
 
 ## Running the backend
 
