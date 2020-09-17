@@ -7,7 +7,7 @@ route /games/* {
 
 route /votes/* {
     uri strip_prefix /votes
-    reverse_proxy http://kajappka-vote-service:8000
+    reverse_proxy http://kajappka-vote-service:8080
 }
 
 route /ratings/* {
